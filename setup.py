@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
       name = "nicosearch",
       py_modules=['nicosearch'],
-      version = "0.0.4",
+      version = "0.0.5",
       license = 'MIT License',
       download_url = "http://backloglib.googlecode.com/files/backloglib-0.1.1.tar.g://github.com/ymizushi/nicosearch/archive/master.zip",
       platforms = ['POSIX'],
@@ -21,5 +21,5 @@ setup(
                      "Topic :: Utilities",
                      "Topic :: Software Development",
                      ],
-      long_description = open('README.md').read()
+      long_description = ""
       )
