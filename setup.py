@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
       name = "nicosearch",
       py_modules=['nicosearch'],
-      version = "0.0.2",
+      version = "0.0.3",
       license = open('./LICENSE').read(),
       download_url = "http://backloglib.googlecode.com/files/backloglib-0.1.1.tar.g://github.com/ymizushi/nicosearch/archive/master.zip",
       platforms = ['POSIX'],
