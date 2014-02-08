@@ -18,7 +18,7 @@ class SearchQueryBuilder(object):
             'issuer'  : 'nicosearcy.py',
             'reason'  : 'searching niconico with python'
             }
-        for k,v in option:
+        for k,v in option.items():
             self.query[k] = v
 
     def build(self):
