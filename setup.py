@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
       name = "nicosearch",
       version = "0.0.1",
-      license = open('LICENSE').read(),
+      license = open('./LICENSE').read(),
       platforms = ['POSIX'],
       description = "https://github.com/ymizushi/nicosearch",
       author = "ymizushi",
