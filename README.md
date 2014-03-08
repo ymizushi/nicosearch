@@ -1,7 +1,7 @@
 nicosearch
 ==========
 
-The wrapper library of niconico search API with python.
+The wrapper library for niconico search API with python.
 
 
 # Install
