@@ -6,9 +6,9 @@ sys.stdout = codecs.getwriter('utf_8')(sys.stdout)
 sys.stdin  = codecs.getreader('utf_8')(sys.stdin)
 
 class SearchQueryBuilder(object):
-    def __init__(self, query, **option):
+    def __init__(self, keyword, **option):
         self.query = {
-            'query'   :query,
+            'query'   :keyword,
             'service' : ['video'],
             'search'  : ['title'],
             'join'    : ['cmsid', 'title', 'view_counter'],
@@ -19,6 +19,8 @@ class SearchQueryBuilder(object):
             'reason'  : 'searching niconico with python'
             }
         for k,v in option.items():
+            if k is 'frm':
+                k = 'from'
             self.query[k] = v
 
     def build(self):
@@ -59,4 +61,8 @@ class SearchResponse(object):
 
     def get_contents(self):
         return self._contents
+
+def search(keyword, **option):
+    query = SearchQueryBuilder(keyword, **option).build()
+    return SearchRequest(query).fetch().get_contents()
 

@@ -4,7 +4,7 @@ import unittest
 
 class TestSearchQueryBuilder(unittest.TestCase):
     def test_build(self):
-        from search import SearchQueryBuilder
+        from nicosearch import SearchQueryBuilder
         result = SearchQueryBuilder(u'閃乱カグラ').build()
         expected = {
             'query'   : u'閃乱カグラ',
@@ -41,10 +41,6 @@ class TestSearchRequest(unittest.TestCase):
             'reason'  : 'searching niconico with python'
             }
         self.assertTrue(isinstance(SearchRequest(query).fetch(), SearchResponse))
-
-class TestSearchRequest(unittest.TestCase):
-    def test__filter_contents(self):
-        pass
 
 if __name__ == '__main__':
     unittest.main()
