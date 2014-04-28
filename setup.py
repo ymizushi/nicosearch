@@ -5,7 +5,7 @@ setup(
       py_modules=['nicosearch'],
       version = "0.0.9.1",
       license = 'MIT License',
-      download_url = "http//github.com/ymizushi/nicosearch/archive/master.zip",
+      download_url = "https://github.com/ymizushi/nicosearch/archive/master.zip",
       platforms = ['POSIX'],
       description = "https://github.com/ymizushi/nicosearch",
       author = "ymizushi",
