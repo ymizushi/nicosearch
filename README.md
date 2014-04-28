@@ -30,3 +30,8 @@ print SearchRequest(query).fetch().contents
 from nicosearch import search
 print search(u'閃乱カグラ')
 ```
+
+# Update PyPI command
+```sh
+python setup.py register sdist upload
+```
