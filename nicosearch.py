@@ -7,7 +7,7 @@ sys.stdin  = codecs.getreader('utf_8')(sys.stdin)
 
 class SearchQueryBuilder(object):
     def __init__(self, keyword, **option):
-        self.query = {
+        self._query = {
             'query'   :keyword,
             'service' : ['video'],
             'search'  : ['title'],
@@ -21,22 +21,22 @@ class SearchQueryBuilder(object):
         for k,v in option.items():
             if k is 'frm':
                 k = 'from'
-            self.query[k] = v
+            self._query[k] = v
 
     def build(self):
-        return self.query
+        return self._query
 
 class SearchRequest(object):
     URL = 'http://api.search.nicovideo.jp/api/'
     HEADERS = {'content-type': 'application/json'}
 
     def __init__(self, data, url=URL):
-        self.data = data
-        self.url = url
+        self._data = data
+        self._url = url
 
     def fetch(self):
         import requests, json
-        return SearchResponse(requests.post(self.url, data=json.dumps(self.data), headers=self.HEADERS))
+        return SearchResponse(requests.post(self._url, data=json.dumps(self._data), headers=self.HEADERS))
 
 class SearchResponse(object):
     def __init__(self, response):
@@ -59,10 +59,11 @@ class SearchResponse(object):
                         contents += [value]
         return contents
 
-    def get_contents(self):
+    @property
+    def contents(self):
         return self._contents
 
 def search(keyword, **option):
     query = SearchQueryBuilder(keyword, **option).build()
-    return SearchRequest(query).fetch().get_contents()
+    return SearchRequest(query).fetch().contents
 

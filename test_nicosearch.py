@@ -5,7 +5,7 @@ import unittest
 class TestSearchQueryBuilder(unittest.TestCase):
     def test_build(self):
         from nicosearch import SearchQueryBuilder
-        result = SearchQueryBuilder(u'閃乱カグラ').build()
+        actual = SearchQueryBuilder(u'閃乱カグラ').build()
         expected = {
             'query'   : u'閃乱カグラ',
             'service' : ['video'],
@@ -17,17 +17,14 @@ class TestSearchQueryBuilder(unittest.TestCase):
             'issuer'  : 'nicosearcy.py',
             'reason'  : 'searching niconico with python'
             }
-        self.assertEqual(result, expected)
-
-        expected = { 'query'   : u'閃乱カグラ', }
-        self.assertNotEqual(result, expected)
+        self.assertEqual(actual, expected)
         
         with self.assertRaises(TypeError):
-            result = SearchQueryBuilder()
+            actual = SearchQueryBuilder()
 
 class TestSearchRequest(unittest.TestCase):
     def test_fetch(self):
-        from search import SearchRequest, SearchResponse
+        from nicosearch import SearchRequest, SearchResponse
 
         query = {
             'query'   : u'閃乱カグラ',

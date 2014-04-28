@@ -20,11 +20,11 @@ sys.stdin  = codecs.getreader('utf_8')(sys.stdin)
 
 from nicosearch import SearchRequest, SearchQueryBuilder
 query = SearchQueryBuilder(u'MMD').build()
-print SearchRequest(query).fetch().get_contents()
+print SearchRequest(query).fetch().contents
 
 # add seach option
 query = SearchQueryBuilder(u'閃乱カグラ', frm=0, size=10).build()
-print SearchRequest(query).fetch().get_contents()
+print SearchRequest(query).fetch().contents
 
 # shortcut function
 from nicosearch import search
