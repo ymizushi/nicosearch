@@ -3,7 +3,6 @@ nicosearch
 
 The wrapper library for niconico search API with python.
 
-
 # Install
 ```sh
 pip install nicosearch
