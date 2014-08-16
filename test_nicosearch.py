@@ -39,15 +39,5 @@ class TestSearchRequest(unittest.TestCase):
             }
         self.assertTrue(isinstance(SearchRequest(query).fetch(), SearchResponse))
 
-    def test_contents(self):
-        from nicosearch import SearchRequest
-        import json
-        query = {'query'   : u'閃乱カグラ'}
-        result = SearchRequest(query).fetch().contents
-
-class TestSearchMethod(unittest.TestCase):
-    def test_search(self):
-        from nicosearch import search
-
 if __name__ == '__main__':
     unittest.main()

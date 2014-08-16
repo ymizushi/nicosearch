@@ -43,6 +43,10 @@ class SearchResponse(object):
         self._response = response
         self._contents = self._filter_contents(self._response.text)
 
+    @property
+    def contents(self):
+        return self._contents
+
     def _filter_contents(self, text):
         import json
         json_list = text.splitlines()
@@ -59,11 +63,36 @@ class SearchResponse(object):
                         contents += [value]
         return contents
 
+class Content:
+    def __init__(self, rowid, cmsid, title, view_counter):
+        self._rowid = rowid
+        self._cmsid = cmsid
+        self._title = title
+        self._view_counter = view_counter
+
     @property
-    def contents(self):
-        return self._contents
+    def rowid(self):
+        return self._rowid
+    @property
+    def cmsid(self):
+        return self._cmsid
+    @property
+    def title(self):
+        return self._title
+    @property
+    def view_counter(self):
+        return self._view_counter
+
+class ContentsBuilder:
+    def __init__(self, contents):
+        self._contents = contents
+
+    def build(self):
+        return map(
+            lambda x: Content(x['_rowid'], x['cmsid'], x['title'], x['view_counter']),
+            self._contents
+        )
 
 def search(keyword, **option):
     query = SearchQueryBuilder(keyword, **option).build()
     return SearchRequest(query).fetch().contents
-
