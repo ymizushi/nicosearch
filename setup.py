@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
       name = "nicosearch",
       py_modules=['nicosearch'],
-      version = "0.0.9.1",
+      version = "0.1.0.0",
       license = 'MIT License',
       download_url = "https://github.com/ymizushi/nicosearch/archive/master.zip",
       platforms = ['POSIX'],
