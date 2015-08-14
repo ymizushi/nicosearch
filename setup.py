@@ -11,7 +11,7 @@ setup(
     author="ymizushi",
     author_email="mizushi@gmail.com",
     url="https://github.com/ymizushi/nicosearch",
-    keywords=["search", "niconico"],
+    keywords=["search", "niconico", "library"],
     classifiers=[
         'License :: OSI Approved :: MIT License',
         "Programming Language :: Python",
@@ -21,5 +21,5 @@ setup(
         "Topic :: Utilities",
         "Topic :: Software Development",
     ],
-    long_description="nicosearch is a library for niconico search API."
+    long_description="The wrapper library for niconico search API with python."
 )
