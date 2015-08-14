@@ -37,3 +37,5 @@ nosetests.xml
 
 *.pyc
 *.un~
+
+.idea

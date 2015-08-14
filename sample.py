@@ -1,22 +1,28 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from __future__ import print_function
 import sys
 import codecs
+
+from nicosearch import SearchQueryBuilder, SearchRequest
+
 sys.stdout = codecs.getwriter('utf_8')(sys.stdout)
-sys.stdin  = codecs.getreader('utf_8')(sys.stdin)
+sys.stdin = codecs.getreader('utf_8')(sys.stdin)
 
-from nicosearch import SearchRequest, SearchQueryBuilder
+
 query = SearchQueryBuilder(u'MMD').build()
-print SearchRequest(query).fetch().contents
+print(SearchRequest(query).fetch().contents)
 
-# add seach option
+# add search option
 query = SearchQueryBuilder(u'閃乱カグラ', frm=0, size=10).build()
-print SearchRequest(query).fetch().contents
+print(SearchRequest(query).fetch().contents)
 
 from nicosearch import ContentsBuilder
+
 query = SearchQueryBuilder(u'閃乱カグラ', frm=0, size=10).build()
-print ContentsBuilder(SearchRequest(query).fetch().contents).build()
+print(ContentsBuilder(SearchRequest(query).fetch().contents).build())
 
 # shortcut function
 from nicosearch import search
-print search(u'閃乱カグラ')
+
+print(search(u'閃乱カグラ'))
