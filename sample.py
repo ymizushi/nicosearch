@@ -1,14 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from __future__ import print_function
-import sys
-import codecs
-
 from nicosearch import SearchQueryBuilder, SearchRequest
-
-sys.stdout = codecs.getwriter('utf_8')(sys.stdout)
-sys.stdin = codecs.getreader('utf_8')(sys.stdin)
-
 
 query = SearchQueryBuilder(u'MMD').build()
 print(SearchRequest(query).fetch().contents)

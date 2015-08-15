@@ -1,1 +1,1 @@
-__author__ = 'ymizushi'
+# -*- coding: utf-8 -*-
