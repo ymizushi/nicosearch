@@ -6,6 +6,8 @@ nicosearch/__init__.py
 nicosearch/__init__.pyc
 nicosearch/config.py
 nicosearch/config.pyc
+nicosearch/__pycache__/__init__.cpython-34.pyc
+nicosearch/__pycache__/config.cpython-34.pyc
 nicosearch/api/__init__.py
 tests/__init__.py
 tests/test_nicosearch.py
