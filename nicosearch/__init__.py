@@ -1,14 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import sys
-import codecs
 import requests
 import json
 
 from .config import API_ENTRY_POINT, API_END_POINT
-
-sys.stdout = codecs.getwriter('utf_8')(sys.stdout)
-sys.stdin = codecs.getreader('utf_8')(sys.stdin)
 
 
 class SearchQueryBuilder(object):
@@ -108,4 +103,3 @@ class ContentsBuilder:
 def search(keyword, **option):
     query = SearchQueryBuilder(keyword, **option).build()
     return SearchRequest(query).fetch().contents
-
