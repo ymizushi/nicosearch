@@ -1,5 +1,9 @@
 nicosearch
 ==========
+
+# This repository is no longer maintained!
+because of the end of "新検索β".
+
 [![Build Status](https://travis-ci.org/ymizushi/nicosearch.png?branch=master)](https://travis-ci.org/ymizushi/nicosearch)
 
 The wrapper library for niconico search API with python.
